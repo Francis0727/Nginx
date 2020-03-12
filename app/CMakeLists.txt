@@ -1,0 +1,17 @@
+cmake_minimum_required (VERSION 3.5)
+file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cxx")
+add_executable(nginx ${SOURCES})
+target_include_directories(nginx PRIVATE 
+                           ${PROJECT_SOURCE_DIR}/include)
+SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR})
+
+include(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG("-std=c++11" COMPILER_SUPPORTS_CXX11)
+CHECK_CXX_COMPILER_FLAG("-std=c++0x" COMPILER_SUPPORTS_CXX0X)
+if(COMPILER_SUPPORTS_CXX11)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+elseif(COMPILER_SUPPORTS_CXX0X)
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
+else()
+     message(STATUS "The compiler has no C++11 support")
+endif()

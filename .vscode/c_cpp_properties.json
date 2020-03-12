@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "D:/MinGW/lib/gcc/mingw32/8.2.0/include/c++",
+                "D:/MinGW/lib/gcc/mingw32/8.2.0/include/c++/mingw32",
+                "D:/MinGW/lib/gcc/mingw32/8.2.0/include/c++/backward",
+                "D:/MinGW/lib/gcc/mingw32/8.2.0/include",
+                "D:/MinGW/lib/gcc/mingw32/8.2.0/include-fixed"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+
+            "intelliSenseMode": "msvc-x64",
+            "browse": {
+                "path": [
+                     "D:/MinGW/lib/gcc/mingw32/8.2.0/include/",
+                     "D:/MinGW/lib/gcc/mingw32/8.2.0/include-fixed",
+                     "D:/MinGW/include/*"
+                ]
+            }
+        }
+    ],
+    "version": 4
+}
