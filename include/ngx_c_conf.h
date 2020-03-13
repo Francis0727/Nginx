@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
 #include "ngx_global.h"
 
 class CConfig {
@@ -33,6 +34,9 @@ public:
             }
         }
     };
+
+public:
+    bool Load(std::string confName);
 };
 
 #endif
