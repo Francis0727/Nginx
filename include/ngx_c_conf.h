@@ -37,6 +37,8 @@ public:
 
 public:
     bool Load(std::string confName);
+    std::string GetString(std::string itemName);
+    int GetIntDefault(std::string itemName,int def);
 };
 
 #endif

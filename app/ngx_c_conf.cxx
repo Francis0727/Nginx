@@ -22,6 +22,29 @@ bool CConfig::Load(std::string confName){
         configItem.ItemContent = lineContent.substr(pos + 1);
         m_ConfigItemList.push_back(configItem);
     }
-
+    
+    fin.close();
     return true;
+}
+
+std::string CConfig::GetString(std::string itemName){
+    std::string ret = "";
+    std::vector<CConfItem>::iterator ite = m_ConfigItemList.begin();
+    for (;ite != m_ConfigItemList.end();++ite){
+        if (ite->ItemName == itemName){
+            ret = ite->ItemContent;
+        }
+    }
+    return ret;
+}
+
+int CConfig::GetIntDefault(std::string itemName,int def){
+    int ret = def;
+    std::vector<CConfItem>::iterator ite = m_ConfigItemList.begin();
+    for (;ite != m_ConfigItemList.end();++ite){
+        if (ite->ItemName == itemName){
+            ret = std::stoi(ite->ItemContent) ;
+        }
+    }
+    return ret;
 }
