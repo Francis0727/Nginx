@@ -46,5 +46,5 @@ int CConfig::GetIntDefault(std::string itemName,int def){
             ret = std::stoi(ite->ItemContent) ;
         }
     }
-    return ret;
+    return ret; 
 }
