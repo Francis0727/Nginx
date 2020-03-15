@@ -2,6 +2,9 @@
 #include <cstring>
 #include "ngx_string.h"
 #include "ngx_global.h"
+#include <unistd.h>
+
+extern char **environ;
 
 void removeInvalidChar(std::string& str){
     size_t validChar = 0;
