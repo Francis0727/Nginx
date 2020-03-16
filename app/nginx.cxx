@@ -18,21 +18,12 @@ int main(int argc, char *const *argv) {
         exit(1);
     }
 
-    ngx_log_stderr(12,"#%d##%d...",12,123);
-    ngx_log_stderr(12,"#%u##%u...",-12,123);
-    ngx_log_stderr(12,"#%f##%f...",3.145,34.567);
-    ngx_log_stderr(12,"#%s##%s...","*","**");
-    ngx_log_stderr(12,"#%p##%p...",getpid(),getpid());
-    ngx_log_stderr(12,"#%.6f##%.10f...",12.0,12.4);
+    ngx_log_init();
+    ngx_log_error_core(1,2,"th erro code: %d", 12);
     if (gp_envmem){
         delete [] gp_envmem;
         gp_envmem = NULL;
     }
-    
-    while (1)
-    {
-        /* code */
-    }
-    
+        
     return 0;
 }
